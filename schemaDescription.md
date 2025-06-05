@@ -1,5 +1,5 @@
-#Schema Design and Relationships
-##Data Warehouse Schema Design Summary
+# Schema Design and Relationships
+## Data Warehouse Schema Design Summary
 The data warehouse schema proposed for this project is a **star schema architecture**. This is much more ideal for analytical querying and reporting. At the center of the design is the FactSales table, which captures measurable sales transactions, while surrounding dimension tables provide descriptive context for analysis. This would be lunch on the Amazon Web Services cloud platform. Aurora and RDS are the relational databases employed to host the PostgreSQL database engine. This was chosen to optimize performance and scalability. It is also cost-effective since it utilizes the pay-as-you-go method.
 
 **Fact Table**: FactSales
@@ -11,7 +11,7 @@ The FactSales table serves as the central fact table, where each record represen
 *	amount: The quantitative measure of the sale.
 This table is optimized for aggregations and is designed to be queried with the dimension tables for slicing and dicing the data by time, geography, or product category.
 
-##**Dimension Tables and Relationships**
+## **Dimension Tables and Relationships**
 1.	**DimDate**
 	Provides a rich breakdown of time-related attributes: Year, Quarter, Month, Weekday, and their names.
 	The dateid serves as the primary key and connects to FactSales.dateid.
@@ -25,7 +25,7 @@ This table is optimized for aggregations and is designed to be queried with the 
 	The countryid is the primary key and relates to FactSales.countryid.
 	Facilitates geographic segmentation and international sales reporting.
 
-##Relationships
+## Relationships
 	The FactSales table maintains foreign key relationships with each dimension:
 *	FactSales.dateid → DimDate.dateid
 *	FactSales.categoryid → DimCategory.categoryid
