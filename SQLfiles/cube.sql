@@ -1,4 +1,6 @@
 --Cube
+-- Task: Create a cube query using the columns year, country, and average sales
+
 select year, country, avg(amount) as Avg_Sales
 from "FactSales"
 left join "DimCountry"

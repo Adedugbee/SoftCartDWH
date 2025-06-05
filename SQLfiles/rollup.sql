@@ -1,4 +1,6 @@
 --Rollup
+-- Task: Create a rollup query using the columns year, country, and totalsales
+
 select year, country, amount as Total_Sales
 from "FactSales"
 left join "DimCountry"

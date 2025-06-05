@@ -2,7 +2,7 @@ Begin;
 
 DROP Materialized View IF EXISTS public.Total_Sales_Per_Country CASCADE;
 
--- Create the materialized view
+-- Task: Create the materialized view named total_sales_per_country that has the columns country and total_sales
 Create Materialized View Total_Sales_Per_Country(country,TotalSales) As
 (
 Select 

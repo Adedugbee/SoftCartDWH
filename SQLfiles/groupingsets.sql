@@ -1,4 +1,5 @@
 -- Group set
+-- Task: Create a grouping sets query using the columns country, category, totalsales
 select country, category, amount as totalsales
 from "FactSales"
 left join "DimCountry"
