@@ -11,7 +11,7 @@ The FactSales table serves as the central fact table, where each record represen
 *	amount: The quantitative measure of the sale.
 This table is optimized for aggregations and is designed to be queried with the dimension tables for slicing and dicing the data by time, geography, or product category.
 
-###**Dimension Tables and Relationships**
+##**Dimension Tables and Relationships**
 1.	**DimDate**
 	Provides a rich breakdown of time-related attributes: Year, Quarter, Month, Weekday, and their names.
 	The dateid serves as the primary key and connects to FactSales.dateid.
@@ -25,10 +25,12 @@ This table is optimized for aggregations and is designed to be queried with the 
 	The countryid is the primary key and relates to FactSales.countryid.
 	Facilitates geographic segmentation and international sales reporting.
 
-###Relationships
-•	The FactSales table maintains foreign key relationships with each dimension:
-o	FactSales.dateid → DimDate.dateid
-o	FactSales.categoryid → DimCategory.categoryid
-o	FactSales.countryid → DimCountry.countryid
+##Relationships
+	The FactSales table maintains foreign key relationships with each dimension:
+*	FactSales.dateid → DimDate.dateid
+*	FactSales.categoryid → DimCategory.categoryid
+*	FactSales.countryid → DimCountry.countryid
+
 These relationships ensure referential integrity and enable efficient joins during analysis. This structure supports powerful OLAP-style queries for dashboards, KPIs, and executive reports.
-Summarily, this star schema design provides a clean, intuitive, and performant foundation for business intelligence and reporting. The separation of facts and dimensions allows for scalable, flexible analysis across key business domains—time, location, and product category—while maintaining consistency and simplicity in data management.
+
+**Summarily**, this star schema design provides a clean, intuitive, and performant foundation for business intelligence and reporting. The separation of facts and dimensions allows for scalable, flexible analysis across key business domains—time, location, and product category—while maintaining consistency and simplicity in data management.
